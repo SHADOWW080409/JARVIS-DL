@@ -34,7 +34,7 @@ Speaking is usually much faster than typing (roughly 150-220 wpm vs 35-40 wpm fo
 Requirements: Windows 10/11, [Node.js 18+](https://nodejs.org), and a microphone.
 
 ```powershell
-git clone https://github.com/<your-username>/jarvis-dl.git
+git clone https://github.com/SHADOWW080409/jarvis-dl.git
 cd jarvis-dl
 .\install.ps1        # or: npm install
 npm start
