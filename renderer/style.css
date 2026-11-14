@@ -1,0 +1,55 @@
+html, body { margin: 0; background: transparent; overflow: hidden; user-select: none;
+  font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif; color: #e8f4ff; font-size: 13px; }
+
+.island { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 560px;
+  background: rgba(8, 10, 16, 0.96); border: 1px solid rgba(120, 200, 255, 0.18); border-radius: 26px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55); overflow: hidden;
+  transition: width 0.25s ease, border-radius 0.25s ease; }
+.island.collapsed { width: 230px; border-radius: 24px; }
+
+.pill { display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 10px; height: 52px; box-sizing: border-box; }
+.island:not(.collapsed) .pill { height: 72px; }
+#orb { width: 40px; height: 40px; transition: all 0.25s ease; flex: none; }
+.island:not(.collapsed) #orb { width: 56px; height: 56px; }
+.pill-text { flex: 1; min-width: 0; }
+#status { font-weight: 600; font-size: 14px; }
+#sub { font-size: 11px; opacity: 0.6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#mic { background: rgba(94, 200, 255, 0.12); border: 1px solid rgba(94, 200, 255, 0.35); color: inherit;
+  width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 15px; }
+#mic:hover { background: rgba(94, 200, 255, 0.28); }
+
+.body { max-height: 0; opacity: 0; overflow-y: auto; transition: max-height 0.3s ease, opacity 0.2s ease; }
+.island:not(.collapsed) .body { max-height: 440px; opacity: 1; }
+.body::-webkit-scrollbar { width: 6px; }
+.body::-webkit-scrollbar-thumb { background: rgba(120, 200, 255, 0.25); border-radius: 3px; }
+
+.main, .settings { padding: 4px 18px 16px; }
+.settings { border-top: 1px solid rgba(120, 200, 255, 0.12); user-select: text; }
+#heard { opacity: 0.65; font-style: italic; margin-bottom: 6px; min-height: 16px; }
+#reply { font-size: 15px; line-height: 1.4; min-height: 20px; user-select: text; }
+.hint { margin-top: 12px; font-size: 11px; opacity: 0.5; line-height: 1.5; }
+
+#tasks { list-style: none; margin: 10px 0 0; padding: 0; }
+#tasks li { padding: 4px 8px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); margin-bottom: 4px;
+  display: flex; justify-content: space-between; gap: 8px; font-size: 12px; }
+#tasks .st { opacity: 0.6; flex: none; }
+
+button { font: inherit; color: inherit; background: rgba(94, 200, 255, 0.14); border: 1px solid rgba(94, 200, 255, 0.35);
+  border-radius: 10px; padding: 4px 12px; cursor: pointer; }
+button:hover { background: rgba(94, 200, 255, 0.28); }
+#stop { margin-top: 6px; }
+#confirm { margin: 10px 0; padding: 10px; border-radius: 12px; background: rgba(255, 180, 70, 0.12); border: 1px solid rgba(255, 180, 70, 0.4); }
+#confirm button { margin: 8px 8px 0 0; }
+#typed { width: 100%; box-sizing: border-box; margin-top: 10px; }
+
+input[type=text], input[type=password], select { background: rgba(255, 255, 255, 0.06); color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 5px 8px; font: inherit; }
+select option { background: #10131c; }
+h4 { margin: 16px 0 6px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 6px 0; }
+.row > label { opacity: 0.85; flex: none; }
+.row > input[type=text], .row > input[type=password], .row > select { flex: 1; min-width: 0; max-width: 260px; }
+.row > input[type=range] { flex: 1; max-width: 260px; }
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin: 6px 0; }
+.checks label { display: flex; gap: 6px; align-items: center; }
+.mem { font-size: 12px; opacity: 0.8; margin: 4px 0; padding-left: 16px; }

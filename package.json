@@ -1,0 +1,28 @@
+{
+  "name": "jarvis-dl",
+  "version": "0.1.0",
+  "description": "JARVIS DL - an open-source, voice-first AI companion that lives in a floating Dynamic Island on Windows 10/11.",
+  "main": "electron/main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "icon": "node scripts/make-icon.js",
+    "check": "node scripts/check.js",
+    "test": "node --test",
+    "dist": "electron-builder --win"
+  },
+  "dependencies": {
+    "uiohook-napi": "^1.5.4"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "dev.jarvisdl.app",
+    "productName": "JARVIS DL",
+    "files": ["electron/**", "renderer/**", "data/**", "assets/**", "package.json"],
+    "asarUnpack": ["electron/native/**"],
+    "win": { "target": "nsis", "icon": "assets/icon.png" }
+  }
+}

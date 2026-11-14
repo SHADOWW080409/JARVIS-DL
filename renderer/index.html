@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; media-src 'self' blob:; img-src 'self' data:">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="island" class="island collapsed">
+  <div class="pill">
+    <canvas id="orb" width="160" height="160"></canvas>
+    <div class="pill-text">
+      <div id="status">Ready</div>
+      <div id="sub"></div>
+    </div>
+    <button id="mic" title="Talk (Ctrl+Alt+J)">&#127897;</button>
+  </div>
+  <div class="body" id="body">
+    <section class="main">
+      <div id="heard"></div>
+      <div id="reply"></div>
+      <div id="confirm" hidden>
+        <div id="confirm-msg"></div>
+        <button id="allow">Allow</button><button id="deny">Deny</button>
+      </div>
+      <ul id="tasks"></ul>
+      <button id="stop" hidden>Stop all tasks</button>
+      <input id="typed" type="text" placeholder="Or type a command and press Enter…" spellcheck="false">
+      <div class="hint">Hold <b>Ctrl+Win</b> to dictate &middot; Hold <b>Ctrl+Shift</b> and circle to ask &middot; <b>Ctrl+Alt+J</b> to talk &middot; <b>Pause</b> to stop &middot; scroll for settings &darr;</div>
+    </section>
+    <section class="settings" id="settings"></section>
+  </div>
+</div>
+<script src="orb.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
