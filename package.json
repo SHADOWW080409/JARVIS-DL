@@ -20,7 +20,7 @@
   },
   "build": {
     "appId": "dev.jarvisdl.app",
-    "npmRebulid":false,
+    "npmRebuild":false,
     "productName": "JARVIS DL",
     "files": ["electron/**", "renderer/**", "data/**", "assets/**", "package.json"],
     "asarUnpack": ["electron/native/**"],
